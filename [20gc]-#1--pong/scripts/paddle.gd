@@ -5,7 +5,7 @@ extends AnimatableBody2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 @export var speed : float = 10.0
-@export var cpu_speed : float = 3300.0
+@export var cpu_speed : float = 3000.0
 @export_enum("Player", "CPU") var paddle_type : String
 
 var start_pos : Vector2
