@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bbdvfkrlfqcjq"]
+
+[ext_resource type="Script" uid="uid://dawxx0oo5i20k" path="res://scenes/ui_manager.gd" id="1_rwj1f"]
+[ext_resource type="FontFile" uid="uid://c8tcn2b0mh0qi" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="2_iku3t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iku3t"]
+font = ExtResource("2_iku3t")
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_reske"]
+font = ExtResource("2_iku3t")
+font_size = 38
+
+[node name="UiManager" type="Control" unique_id=2005357474]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rwj1f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=474634213]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=934200323]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 24.0
+offset_top = 8.0
+offset_right = -1.5
+offset_bottom = 81.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -359
+
+[node name="PlayerLabel" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=673845050]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "0"
+label_settings = SubResource("LabelSettings_iku3t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CPULabel" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=1738029065]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "0"
+label_settings = SubResource("LabelSettings_iku3t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CentreText" type="Control" parent="CanvasLayer" unique_id=1644547645]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CentreTextLeft" type="Label" parent="CanvasLayer/CentreText" unique_id=733498635]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 268.5
+offset_right = 353.0
+offset_bottom = 331.5
+size_flags_horizontal = 2
+text = "Press Enter"
+label_settings = SubResource("LabelSettings_reske")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CentreTextRight" type="Label" parent="CanvasLayer/CentreText" unique_id=1046740988]
+layout_mode = 0
+offset_left = 441.365
+offset_top = 268.0
+offset_right = 680.365
+offset_bottom = 331.0
+size_flags_horizontal = 10
+text = "to start"
+label_settings = SubResource("LabelSettings_reske")
+vertical_alignment = 1
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="." unique_id=1445207713]

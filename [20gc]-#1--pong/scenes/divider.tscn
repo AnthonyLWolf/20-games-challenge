@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dbqjmvp242yn6"]
+
+[ext_resource type="Script" uid="uid://dnnyrp1qfn7x7" path="res://scenes/divider.gd" id="1_cksip"]
+
+[node name="Divider" type="Node2D" unique_id=1368429962]
+script = ExtResource("1_cksip")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=782766123]
+offset_top = -304.0
+offset_right = 8.0
+offset_bottom = 296.0
+
+[node name="TopSpawn" type="Marker2D" parent="." unique_id=1726668847]
+position = Vector2(0, -128)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1219344589]
+
+[node name="BottomSpawn" type="Marker2D" parent="." unique_id=766822288]
+position = Vector2(0, 128)
