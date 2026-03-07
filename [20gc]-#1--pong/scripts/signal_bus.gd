@@ -1,6 +1,6 @@
 extends Node
 
-
+# Global signals
 signal signal_start_game
 signal signal_ball_spawned
 signal signal_restart

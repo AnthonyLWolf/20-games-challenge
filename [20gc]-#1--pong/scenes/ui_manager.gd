@@ -1,5 +1,6 @@
 extends Control
 
+# References
 @onready var player_label: Label = $CanvasLayer/HBoxContainer/PlayerLabel
 @onready var cpu_label: Label = $CanvasLayer/HBoxContainer/CPULabel
 @onready var centre_text: Control = $CanvasLayer/CentreText
@@ -17,7 +18,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _ready() -> void:
-	# Sets up text box
 	_set_up_ui()
 	
 	# Signal that allows centre text to show again
@@ -26,17 +26,20 @@ func _ready() -> void:
 	SignalBus.signal_restart.connect(_set_up_ui)
 
 
+# Sets up text boxes
 func _set_up_ui() -> void:
 	centre_text_left.text = "   Press Space"
 	centre_text_right.text = "to start"
 	centre_text.show()
 
 
+# Hides text on game start
 func _start_game() -> void:
 	if centre_text.visible:
 		centre_text.hide()
 
 
+# Handles all the game over conditions for text
 func _handle_game_over() -> void:
 	if GameManager.player_score >= GameConstants.MAX_SCORE:
 		sfx_player.stream = GameConstants.VICTORY

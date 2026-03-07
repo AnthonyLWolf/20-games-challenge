@@ -2,12 +2,12 @@ extends Node
 
 @onready var viewport_size : Vector2i = get_viewport().size
 
-
-
+# Core game variables
 var game_started : bool = false
 var game_over : bool = false
 var single_player : bool = true
 
+# Setters for score
 var player_score : int = 0:
 	set(new_score):
 		player_score = new_score
@@ -16,6 +16,7 @@ var cpu_score : int = 0:
 	set(new_score):
 		cpu_score = new_score
 		UiManager.cpu_label.text = str(cpu_score) 
+
 
 # Connects all signals
 func _ready() -> void:
@@ -28,9 +29,9 @@ func _ready() -> void:
 
 func _start_game():
 	game_started = true
-	#TODO: Start the actual game
 
 
+# Updates score and plays sounds
 func _handle_score(scorer : String):
 	match scorer:
 		"Player":
@@ -50,6 +51,7 @@ func _handle_score(scorer : String):
 		game_over = true
 
 
+# Restarts the game by resetting variables
 func _restart_game():
 	game_started = false
 	game_over = false
