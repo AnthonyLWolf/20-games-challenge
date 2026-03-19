@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cpxpy4h0q3fxs"]
+
+[ext_resource type="Script" uid="uid://6vwdf14ic76v" path="res://ui/ui_manager.gd" id="1_5tvr0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f03mk"]
+font_size = 28
+
+[node name="UIManager" type="Control" unique_id=1320366499]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5tvr0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=786983864]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=219400879]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 25.0
+offset_top = 23.0
+offset_right = 65.0
+offset_bottom = 63.0
+
+[node name="Scores" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=167267521]
+layout_mode = 1
+offset_right = 60.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/Control/Scores" unique_id=1880203700]
+layout_mode = 2
+text = "SCORE: "
+label_settings = SubResource("LabelSettings_f03mk")
