@@ -29,7 +29,12 @@ window/stretch/mode="viewport"
 [file_customization]
 
 folder_colors={
-"res://entities/": "yellow"
+"res://assets/": "purple",
+"res://data/": "blue",
+"res://entities/": "yellow",
+"res://levels/": "orange",
+"res://resources/": "pink",
+"res://ui/": "green"
 }
 
 [input]

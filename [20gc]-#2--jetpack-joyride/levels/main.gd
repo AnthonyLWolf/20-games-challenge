@@ -16,6 +16,14 @@ var fg_start_scroll_pos_x : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SignalBus.signal_game_over.connect(func():
+		Engine.time_scale = 0.1
+		await get_tree().create_timer(1.5, true, false, true).timeout
+		Engine.time_scale = 0.0
+		SignalBus.signal_new_score.emit()
+		UiManager.leaderboard.show()
+		)
+	
 	bg_start_scroll_pos_x = background_parallax.scroll_offset.x
 	mg_start_scroll_pos_x = midground_parallax.scroll_offset.x
 	fg_start_scroll_pos_x = foreground_parallax.scroll_offset.x

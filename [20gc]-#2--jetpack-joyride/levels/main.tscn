@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://dib0n36gdpbuu" path="res://levels/main.gd" id="1_l8qe7"]
 [ext_resource type="TileSet" uid="uid://choo6ypr1ad5r" path="res://resources/tileset/level_tileset.tres" id="2_l8qe7"]
 [ext_resource type="Texture2D" uid="uid://uxujkfmh1s1c" path="res://assets/NewPlatformerPack.png" id="3_m1504"]
+[ext_resource type="PackedScene" uid="uid://c07gkdhbvk5cr" path="res://entities/items/coin_pickup.tscn" id="5_ifaiv"]
+[ext_resource type="PackedScene" uid="uid://bnojmxltmcjwh" path="res://entities/obstacles/bee/obstacle_bee.tscn" id="6_qy63d"]
+[ext_resource type="PackedScene" uid="uid://dvc3o3o2ramxh" path="res://entities/obstacles/slime/obstacle_slime.tscn" id="7_6et1j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ifaiv"]
 texture = ExtResource("3_m1504")
@@ -89,3 +92,12 @@ fly_speed = 2500.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1684598683]
 position = Vector2(583, 345)
+
+[node name="CoinPickup" parent="." unique_id=22005584 instance=ExtResource("5_ifaiv")]
+position = Vector2(950, 350)
+
+[node name="ObstacleBee" parent="." unique_id=423760792 instance=ExtResource("6_qy63d")]
+position = Vector2(1086, 236)
+
+[node name="ObstacleSlime" parent="." unique_id=1250169002 instance=ExtResource("7_6et1j")]
+position = Vector2(950, 200)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cpxpy4h0q3fxs"]
 
 [ext_resource type="Script" uid="uid://6vwdf14ic76v" path="res://ui/ui_manager.gd" id="1_5tvr0"]
+[ext_resource type="PackedScene" uid="uid://b3r4v66mrgrkh" path="res://ui/leaderboard.tscn" id="2_jam4f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f03mk"]
 font_size = 28
@@ -33,3 +34,12 @@ offset_bottom = 40.0
 layout_mode = 2
 text = "SCORE: "
 label_settings = SubResource("LabelSettings_f03mk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Scores" unique_id=1962834332]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="CanvasLayer/Control/Scores/HBoxContainer" unique_id=1215857681]
+layout_mode = 2
+text = "200"
+
+[node name="Leaderboard" parent="." unique_id=350276394 instance=ExtResource("2_jam4f")]

@@ -1,6 +1,6 @@
-extends Control
+extends CanvasLayer
 
-@onready var leaderboard_container: VBoxContainer = $CanvasLayer/Panel/LeaderboardContainer
+@onready var leaderboard_container: VBoxContainer = $LeaderboardControl/Panel/LeaderboardContainer
 
 # Local storage
 var lb_stored_data : Array = []

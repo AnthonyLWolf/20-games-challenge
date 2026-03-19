@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://b3r4v66mrgrkh"]
 
-[ext_resource type="Script" uid="uid://coaikhe0w2o8g" path="res://leaderboard.gd" id="1_143yq"]
-[ext_resource type="LabelSettings" uid="uid://dq8a0mjb2w4j4" path="res://resources/Labels/leaderboard_text.tres" id="2_wvlxr"]
+[ext_resource type="Script" uid="uid://coaikhe0w2o8g" path="res://ui/leaderboard.gd" id="1_143yq"]
+[ext_resource type="LabelSettings" uid="uid://dq8a0mjb2w4j4" path="res://resources/labels/leaderboard_text.tres" id="2_wvlxr"]
 
-[node name="Leaderboard" type="Control" unique_id=789241037]
+[node name="Leaderboard" type="CanvasLayer" unique_id=350276394]
+script = ExtResource("1_143yq")
+
+[node name="LeaderboardControl" type="Control" parent="." unique_id=789241037]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_143yq")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=350276394]
-
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=688856570]
+[node name="Panel" type="Panel" parent="LeaderboardControl" unique_id=688856570]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -27,7 +28,7 @@ offset_bottom = 267.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LeaderboardContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=1606876246]
+[node name="LeaderboardContainer" type="VBoxContainer" parent="LeaderboardControl/Panel" unique_id=1606876246]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -41,152 +42,152 @@ offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RankContainer1" type="HBoxContainer" parent="CanvasLayer/Panel/LeaderboardContainer" unique_id=1425859024]
+[node name="RankContainer1" type="HBoxContainer" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=1425859024]
 layout_mode = 2
 theme_override_constants/separation = 203
 
-[node name="RankLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer1" unique_id=1007444962]
+[node name="RankLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer1" unique_id=1007444962]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "1"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer1" unique_id=1010347969]
+[node name="ScoreLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer1" unique_id=1010347969]
 layout_mode = 2
 text = "200"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="RankContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/LeaderboardContainer" unique_id=275861720]
+[node name="RankContainer2" type="HBoxContainer" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=275861720]
 layout_mode = 2
 theme_override_constants/separation = 203
 
-[node name="RankLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer2" unique_id=193459610]
+[node name="RankLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer2" unique_id=193459610]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "2"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer2" unique_id=289586190]
+[node name="ScoreLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer2" unique_id=289586190]
 layout_mode = 2
 text = "200"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="RankContainer3" type="HBoxContainer" parent="CanvasLayer/Panel/LeaderboardContainer" unique_id=852961238]
+[node name="RankContainer3" type="HBoxContainer" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=852961238]
 layout_mode = 2
 theme_override_constants/separation = 203
 
-[node name="RankLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer3" unique_id=587863385]
+[node name="RankLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer3" unique_id=587863385]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "3"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer3" unique_id=1614890539]
+[node name="ScoreLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer3" unique_id=1614890539]
 layout_mode = 2
 text = "200"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="RankContainer4" type="HBoxContainer" parent="CanvasLayer/Panel/LeaderboardContainer" unique_id=1906266166]
+[node name="RankContainer4" type="HBoxContainer" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=1906266166]
 layout_mode = 2
 theme_override_constants/separation = 203
 
-[node name="RankLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer4" unique_id=1387537129]
+[node name="RankLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer4" unique_id=1387537129]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "4"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer4" unique_id=1391759009]
+[node name="ScoreLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer4" unique_id=1391759009]
 layout_mode = 2
 text = "200"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="RankContainer5" type="HBoxContainer" parent="CanvasLayer/Panel/LeaderboardContainer" unique_id=482376724]
+[node name="RankContainer5" type="HBoxContainer" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=482376724]
 layout_mode = 2
 theme_override_constants/separation = 203
 
-[node name="RankLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer5" unique_id=906526084]
+[node name="RankLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer5" unique_id=906526084]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "5"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer5" unique_id=1570997155]
+[node name="ScoreLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer5" unique_id=1570997155]
 layout_mode = 2
 text = "200"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="RankContainer6" type="HBoxContainer" parent="CanvasLayer/Panel/LeaderboardContainer" unique_id=611474816]
+[node name="RankContainer6" type="HBoxContainer" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=611474816]
 layout_mode = 2
 theme_override_constants/separation = 203
 
-[node name="RankLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer6" unique_id=1525866565]
+[node name="RankLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer6" unique_id=1525866565]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "6"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer6" unique_id=509399315]
+[node name="ScoreLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer6" unique_id=509399315]
 layout_mode = 2
 text = "200"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="RankContainer7" type="HBoxContainer" parent="CanvasLayer/Panel/LeaderboardContainer" unique_id=259555649]
+[node name="RankContainer7" type="HBoxContainer" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=259555649]
 layout_mode = 2
 theme_override_constants/separation = 203
 
-[node name="RankLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer7" unique_id=462629739]
+[node name="RankLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer7" unique_id=462629739]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "7"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer7" unique_id=1454029117]
+[node name="ScoreLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer7" unique_id=1454029117]
 layout_mode = 2
 text = "200"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="RankContainer8" type="HBoxContainer" parent="CanvasLayer/Panel/LeaderboardContainer" unique_id=464766663]
+[node name="RankContainer8" type="HBoxContainer" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=464766663]
 layout_mode = 2
 theme_override_constants/separation = 203
 
-[node name="RankLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer8" unique_id=1049443420]
+[node name="RankLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer8" unique_id=1049443420]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "8"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer8" unique_id=209375314]
+[node name="ScoreLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer8" unique_id=209375314]
 layout_mode = 2
 text = "200"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="RankContainer9" type="HBoxContainer" parent="CanvasLayer/Panel/LeaderboardContainer" unique_id=1044170143]
+[node name="RankContainer9" type="HBoxContainer" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=1044170143]
 layout_mode = 2
 theme_override_constants/separation = 203
 
-[node name="RankLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer9" unique_id=1435551416]
+[node name="RankLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer9" unique_id=1435551416]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "9"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer9" unique_id=1941103590]
+[node name="ScoreLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer9" unique_id=1941103590]
 layout_mode = 2
 text = "200"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="RankContainer10" type="HBoxContainer" parent="CanvasLayer/Panel/LeaderboardContainer" unique_id=587752507]
+[node name="RankContainer10" type="HBoxContainer" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=587752507]
 layout_mode = 2
 theme_override_constants/separation = 203
 
-[node name="RankLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer10" unique_id=1734731842]
+[node name="RankLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer10" unique_id=1734731842]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "10"
 label_settings = ExtResource("2_wvlxr")
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/Panel/LeaderboardContainer/RankContainer10" unique_id=973708285]
+[node name="ScoreLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer/RankContainer10" unique_id=973708285]
 layout_mode = 2
 text = "200"
 label_settings = ExtResource("2_wvlxr")

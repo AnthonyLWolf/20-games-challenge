@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://c07gkdhbvk5cr"]
+
+[ext_resource type="Script" uid="uid://oowk0ud1qo55" path="res://entities/items/coin_pickup.gd" id="1_dinfd"]
+[ext_resource type="Texture2D" uid="uid://uxujkfmh1s1c" path="res://assets/NewPlatformerPack.png" id="2_6q4ib"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phyc4"]
+atlas = ExtResource("2_6q4ib")
+region = Rect2(640, 1539, 128, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivy2b"]
+atlas = ExtResource("2_6q4ib")
+region = Rect2(768, 1539, 128, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpi3x"]
+atlas = ExtResource("2_6q4ib")
+region = Rect2(1280, 1539, 128, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wypft"]
+atlas = ExtResource("2_6q4ib")
+region = Rect2(1152, 1539, 128, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_migna"]
+atlas = ExtResource("2_6q4ib")
+region = Rect2(1024, 1539, 128, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3n3y"]
+atlas = ExtResource("2_6q4ib")
+region = Rect2(896, 1539, 128, 122)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8cfcl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phyc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivy2b")
+}],
+"loop": true,
+"name": &"bronzecoin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpi3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wypft")
+}],
+"loop": true,
+"name": &"goldcoin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_migna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3n3y")
+}],
+"loop": true,
+"name": &"silvercoin",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mw2yn"]
+radius = 23.194826
+
+[node name="CoinPickup" type="Node2D" unique_id=22005584]
+script = ExtResource("1_dinfd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=606323605]
+scale = Vector2(0.6393442, 0.6393443)
+sprite_frames = SubResource("SpriteFrames_8cfcl")
+animation = &"goldcoin"
+frame_progress = 0.7117901
+
+[node name="Area2D" type="Area2D" parent="." unique_id=987326646]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1213280416]
+shape = SubResource("CircleShape2D_mw2yn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

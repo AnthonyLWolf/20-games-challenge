@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $HeroSprite
@@ -30,6 +31,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	
 	UiManager.score += delta
 	
 	if !is_on_floor():
