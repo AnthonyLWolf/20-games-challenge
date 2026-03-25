@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bfq32jsr52b2v"]
+
+[ext_resource type="Script" uid="uid://ciqr2avmsbctq" path="res://entities/logic/pool_manager.gd" id="1_m7hw3"]
+
+[node name="PoolManager" type="Node2D" unique_id=1745003184]
+script = ExtResource("1_m7hw3")
+
+[node name="CoinTimerCooldown" type="Timer" parent="." unique_id=427970344]
+autostart = true
+
+[node name="CoinTimerSpawn" type="Timer" parent="." unique_id=2030554481]
+autostart = true
+
+[node name="ObstacleTimerCooldown" type="Timer" parent="." unique_id=1402503310]
+autostart = true
+
+[node name="ObstacleTimerSpawn" type="Timer" parent="." unique_id=715837481]
+autostart = true
+
+[connection signal="timeout" from="CoinTimerCooldown" to="." method="_on_coin_timer_cooldown_timeout"]
+[connection signal="timeout" from="CoinTimerSpawn" to="." method="_on_coin_timer_spawn_timeout"]
+[connection signal="timeout" from="ObstacleTimerCooldown" to="." method="_on_obstacle_timer_cooldown_timeout"]
+[connection signal="timeout" from="ObstacleTimerSpawn" to="." method="_on_obstacle_timer_spawn_timeout"]

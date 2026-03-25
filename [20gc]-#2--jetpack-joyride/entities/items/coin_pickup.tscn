@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://oowk0ud1qo55" path="res://entities/items/coin_pickup.gd" id="1_dinfd"]
 [ext_resource type="Texture2D" uid="uid://uxujkfmh1s1c" path="res://assets/NewPlatformerPack.png" id="2_6q4ib"]
+[ext_resource type="AudioStream" uid="uid://khvuvapta77c" path="res://assets/audio/sfx/CoinSFX.ogg" id="3_6q4ib"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_phyc4"]
 atlas = ExtResource("2_6q4ib")
@@ -80,4 +81,13 @@ frame_progress = 0.7117901
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1213280416]
 shape = SubResource("CircleShape2D_mw2yn")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=736936502]
+rect = Rect2(-24, -24, 50, 48)
+
+[node name="PickupSFXPlayer" type="AudioStreamPlayer" parent="." unique_id=1174232965]
+stream = ExtResource("3_6q4ib")
+bus = &"SFX"
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
