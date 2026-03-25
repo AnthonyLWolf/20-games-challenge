@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://b3r4v66mrgrkh"]
 
 [ext_resource type="Script" uid="uid://coaikhe0w2o8g" path="res://ui/leaderboard.gd" id="1_143yq"]
+[ext_resource type="Theme" uid="uid://i4lntumeqr63" path="res://data/menustheme.tres" id="2_4tbto"]
 [ext_resource type="LabelSettings" uid="uid://dq8a0mjb2w4j4" path="res://resources/labels/leaderboard_text.tres" id="2_wvlxr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tbto"]
+bg_color = Color(0.18039216, 0.8, 0.44313726, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.5396989, 0.2696446, 0.13777012, 1)
+shadow_size = 6
 
 [node name="Leaderboard" type="CanvasLayer" unique_id=350276394]
 script = ExtResource("1_143yq")
@@ -13,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_4tbto")
 
 [node name="Panel" type="Panel" parent="LeaderboardControl" unique_id=688856570]
 layout_mode = 1
@@ -21,12 +32,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -330.0
-offset_top = -267.0
-offset_right = 330.0
-offset_bottom = 267.0
+offset_left = -328.0
+offset_top = -302.0
+offset_right = 332.0
+offset_bottom = 248.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4tbto")
 
 [node name="LeaderboardContainer" type="VBoxContainer" parent="LeaderboardControl/Panel" unique_id=1606876246]
 layout_mode = 1
@@ -41,6 +53,13 @@ offset_right = 276.0
 offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=1439592060]
+custom_minimum_size = Vector2(50, 60)
+layout_mode = 2
+text = "Leaderboard"
+label_settings = ExtResource("2_wvlxr")
+horizontal_alignment = 1
 
 [node name="RankContainer1" type="HBoxContainer" parent="LeaderboardControl/Panel/LeaderboardContainer" unique_id=1425859024]
 layout_mode = 2
@@ -191,3 +210,21 @@ label_settings = ExtResource("2_wvlxr")
 layout_mode = 2
 text = "200"
 label_settings = ExtResource("2_wvlxr")
+
+[node name="MainMenuButton" type="Button" parent="LeaderboardControl" unique_id=1457789199]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -58.0
+offset_right = 100.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Main menu"
+
+[connection signal="pressed" from="LeaderboardControl/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

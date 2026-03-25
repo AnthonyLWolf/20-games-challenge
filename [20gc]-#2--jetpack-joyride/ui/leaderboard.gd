@@ -13,7 +13,7 @@ var test_set : Array = [252.0, 111.0, 123.2, 50.5, 200.0]
 func _ready() -> void:
 	# Saves score to file and updates leaderboard whenever hero goes on game over 
 	SignalBus.signal_new_score.connect(func():
-		_save_to_file(GameConstants.LB_PATH, UiManager.score)
+		_save_to_file(GameConstants.LB_PATH, GameManager.score)
 		_update_leaderboard()
 		)
 	
@@ -61,7 +61,7 @@ func _update_leaderboard() -> void:
 			var score_label = child.find_child("ScoreLabel")
 			for line in lb_stored_data:
 				if data_i == child.get_index():
-					score_label.text = str(line)
+					score_label.text = str(line, "m")
 				data_i += 1
 
 # Handles file saving by comparing current file contents to the scores to add
@@ -101,3 +101,8 @@ func _load_from_file(path_to_file : String) -> Array:
 	data.sort()
 	data.reverse()
 	return data
+
+
+func _on_main_menu_button_pressed() -> void:
+	hide()
+	get_tree().change_scene_to_file("res://ui/main_menu.tscn")

@@ -1,10 +1,20 @@
 [gd_scene format=3 uid="uid://cpxpy4h0q3fxs"]
 
 [ext_resource type="Script" uid="uid://6vwdf14ic76v" path="res://ui/ui_manager.gd" id="1_5tvr0"]
+[ext_resource type="FontFile" uid="uid://b7dvwin0rkkse" path="res://assets/Kenney Pixel.ttf" id="2_i8kce"]
 [ext_resource type="PackedScene" uid="uid://b3r4v66mrgrkh" path="res://ui/leaderboard.tscn" id="2_jam4f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f03mk"]
+font = ExtResource("2_i8kce")
 font_size = 28
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kc3lm"]
+font = ExtResource("2_i8kce")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
 
 [node name="UIManager" type="Control" unique_id=1320366499]
 layout_mode = 3
@@ -41,5 +51,6 @@ layout_mode = 2
 [node name="CoinsLabel" type="Label" parent="CanvasLayer/Control/Scores/HBoxContainer" unique_id=1215857681]
 layout_mode = 2
 text = "200"
+label_settings = SubResource("LabelSettings_kc3lm")
 
 [node name="Leaderboard" parent="." unique_id=350276394 instance=ExtResource("2_jam4f")]

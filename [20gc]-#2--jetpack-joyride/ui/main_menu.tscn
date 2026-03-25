@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cgjdjsj6enqg0"]
+
+[ext_resource type="Theme" uid="uid://i4lntumeqr63" path="res://data/menustheme.tres" id="1_wk0pr"]
+[ext_resource type="Script" uid="uid://deo31kol663et" path="res://ui/main_menu.gd" id="2_8uxxo"]
+[ext_resource type="Texture2D" uid="uid://bopf6gwp4xy27" path="res://assets/MainMenuArt.png" id="2_rmr83"]
+[ext_resource type="FontFile" uid="uid://b7dvwin0rkkse" path="res://assets/Kenney Pixel.ttf" id="3_8uxxo"]
+[ext_resource type="AudioStream" uid="uid://dxj2g2ibshj3w" path="res://assets/audio/MainMenuTheme.ogg" id="5_8uxxo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ei257"]
+font = ExtResource("3_8uxxo")
+font_size = 111
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8ri8"]
+
+[node name="MainMenu" type="Control" unique_id=146865425]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wk0pr")
+script = ExtResource("2_8uxxo")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=57425938]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rmr83")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1167650032]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.1882353, 0.77254903, 0.4627451, 0.1764706)
+
+[node name="Control" type="Control" parent="." unique_id=662908226]
+layout_mode = 1
+anchor_left = 0.637
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -733.82404
+offset_right = -1112.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1235297327]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.035002
+anchor_right = 28.800001
+anchor_bottom = 16.2
+offset_left = 59.599915
+offset_top = 40.0
+offset_right = -53.0
+offset_bottom = -568.0
+grow_horizontal = 0
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=1155493850]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8uxxo")
+theme_override_font_sizes/font_size = 375
+text = "Starjump Joyride"
+label_settings = SubResource("LabelSettings_ei257")
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Control/VBoxContainer" unique_id=1974820692]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_p8ri8")
+
+[node name="StartButton" type="Button" parent="Control/VBoxContainer" unique_id=726758386]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 46
+text = "Start Game"
+
+[node name="LeaderboardButton" type="Button" parent="Control/VBoxContainer" unique_id=1713825610]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 46
+text = "High Scores"
+
+[node name="QuitButton" type="Button" parent="Control/VBoxContainer" unique_id=1783152832]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 46
+text = "Quit"
+
+[node name="MenuMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1921414989]
+stream = ExtResource("5_8uxxo")
+autoplay = true
+
+[connection signal="pressed" from="Control/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

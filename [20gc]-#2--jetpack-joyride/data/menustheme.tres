@@ -1,0 +1,36 @@
+[gd_resource type="Theme" format=3 uid="uid://i4lntumeqr63"]
+
+[ext_resource type="FontFile" uid="uid://b7dvwin0rkkse" path="res://assets/Kenney Pixel.ttf" id="1_0otjf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0otjf"]
+bg_color = Color(0.15537196, 0.65905184, 0.36951813, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.69803923)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntscf"]
+bg_color = Color(0.18039216, 0.79607844, 0.44705883, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oplnt"]
+bg_color = Color(0.09262752, 0.4186781, 0.2288337, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 4
+
+[resource]
+default_font = ExtResource("1_0otjf")
+default_font_size = 32
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_0otjf")
+Button/styles/normal = SubResource("StyleBoxFlat_ntscf")
+Button/styles/pressed = SubResource("StyleBoxFlat_oplnt")

@@ -4,23 +4,16 @@ extends Control
 @onready var coins_label: Label = $CanvasLayer/Control/Scores/HBoxContainer/CoinsLabel
 @onready var leaderboard: CanvasLayer = $Leaderboard
 
-#TODO: MOVE TO GAME MANAGER!!!
-var score : float = 0.0 :
-	set(new_score):
-		score = snappedf(new_score, 0.01)
-		score_label.text = str("Distance: ", score, "m")
-
-var coins : int = 0 :
-	set(new_coins):
-		coins = new_coins
-		coins_label.text = str(new_coins)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if leaderboard.visible:
 		leaderboard.hide()
-	score_label.text = str("Distance: ", score, "m")
-	coins_label.text = str(coins)
+	
+	score_label.hide()
+	coins_label.hide()
+	score_label.text = str("Distance: ", GameManager.score, "m")
+	coins_label.text = str(GameManager.coins)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
