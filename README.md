@@ -13,6 +13,28 @@ Not much to say... it's Pong!
 * Beatable CPU
 * Score labels
 
-# Game #2: Jetpack Joyride
+# Game #2: Starjump Joyride
+
+Basically Jetpack Joyride, turned into a little tribute to a friend's game!
+
+* Endless scrolling background with parallax
+* Floaty jetpack effect
+* Basic animations including a cheap velocity-based stretch
+* Coin pickups
+* Couple of obstacles to stop the player
+* Funny music
+* Cute menus
+* Chill pooling system that definitely didn't make me go insane for two streams in a row
+* But seriously cool pooling that recycles coins and enemies
+* Leaderboard scores permanence between sessions
+
+Potential to expand with:
+* Shop and upgrades
+* Difficulty increase as time goes on: faster enemies and movement
+* More obstacles
+* Particle effects
+* Jetpack raycast to defeat enemies underneath player
+
+# Game #3: Frogger
 
 Coming soon!
