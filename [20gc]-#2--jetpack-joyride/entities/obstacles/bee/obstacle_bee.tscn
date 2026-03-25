@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://v6ico47axqq5" path="res://entities/obstacles/bee/obstacle_bee.gd" id="1_0rymf"]
 [ext_resource type="Texture2D" uid="uid://uxujkfmh1s1c" path="res://assets/NewPlatformerPack.png" id="1_h4adr"]
 [ext_resource type="Script" uid="uid://br8oww25qin4d" path="res://resources/enemy_stats.gd" id="2_08faj"]
+[ext_resource type="AudioStream" uid="uid://wycx2st6maas" path="res://assets/audio/sfx/GameOverSFX.ogg" id="4_ol6q2"]
 
 [sub_resource type="Resource" id="Resource_ol6q2"]
 script = ExtResource("2_08faj")
@@ -46,6 +47,8 @@ radius = 30.870699
 radius = 36.249138
 
 [node name="ObstacleBee" type="CharacterBody2D" unique_id=423760792]
+collision_layer = 2
+collision_mask = 8
 script = ExtResource("1_0rymf")
 stats = SubResource("Resource_ol6q2")
 
@@ -63,4 +66,12 @@ shape = SubResource("CircleShape2D_h4adr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=596553794]
 shape = SubResource("CircleShape2D_0rymf")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1488334086]
+
+[node name="GameOverSFXPlayer" type="AudioStreamPlayer" parent="." unique_id=901592633]
+stream = ExtResource("4_ol6q2")
+bus = &"SFX"
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

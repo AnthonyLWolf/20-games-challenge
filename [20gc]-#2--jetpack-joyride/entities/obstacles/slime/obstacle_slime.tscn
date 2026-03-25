@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://uxujkfmh1s1c" path="res://assets/NewPlatformerPack.png" id="1_i7oow"]
 [ext_resource type="Script" uid="uid://co4usnj3vjai" path="res://entities/obstacles/slime/obstacle_slime.gd" id="1_sof2o"]
 [ext_resource type="Script" uid="uid://br8oww25qin4d" path="res://resources/enemy_stats.gd" id="2_cvuc5"]
+[ext_resource type="AudioStream" uid="uid://wycx2st6maas" path="res://assets/audio/sfx/GameOverSFX.ogg" id="4_re8pu"]
 
 [sub_resource type="Resource" id="Resource_re8pu"]
 script = ExtResource("2_cvuc5")
@@ -46,6 +47,8 @@ radius = 21.377558
 size = Vector2(66, 42)
 
 [node name="ObstacleSlime" type="CharacterBody2D" unique_id=1250169002]
+collision_layer = 2
+collision_mask = 8
 script = ExtResource("1_sof2o")
 stats = SubResource("Resource_re8pu")
 
@@ -65,4 +68,12 @@ shape = SubResource("CircleShape2D_k12fw")
 position = Vector2(-1, 17)
 shape = SubResource("RectangleShape2D_cvuc5")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=203985326]
+
+[node name="GameOverSFXPlayer" type="AudioStreamPlayer" parent="." unique_id=50518343]
+stream = ExtResource("4_re8pu")
+bus = &"SFX"
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
