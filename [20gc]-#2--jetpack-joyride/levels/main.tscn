@@ -4,9 +4,8 @@
 [ext_resource type="Script" uid="uid://dib0n36gdpbuu" path="res://levels/main.gd" id="1_l8qe7"]
 [ext_resource type="TileSet" uid="uid://choo6ypr1ad5r" path="res://resources/tileset/level_tileset.tres" id="2_l8qe7"]
 [ext_resource type="Texture2D" uid="uid://uxujkfmh1s1c" path="res://assets/NewPlatformerPack.png" id="3_m1504"]
-[ext_resource type="PackedScene" uid="uid://c07gkdhbvk5cr" path="res://entities/items/coin_pickup.tscn" id="5_ifaiv"]
-[ext_resource type="PackedScene" uid="uid://bnojmxltmcjwh" path="res://entities/obstacles/bee/obstacle_bee.tscn" id="6_qy63d"]
-[ext_resource type="PackedScene" uid="uid://dvc3o3o2ramxh" path="res://entities/obstacles/slime/obstacle_slime.tscn" id="7_6et1j"]
+[ext_resource type="AudioStream" uid="uid://btmfnuplm4hpn" path="res://assets/audio/LevelTheme.ogg" id="6_5k4jt"]
+[ext_resource type="PackedScene" uid="uid://bfq32jsr52b2v" path="res://entities/logic/pool_manager.tscn" id="8_6et1j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ifaiv"]
 texture = ExtResource("3_m1504")
@@ -59,7 +58,7 @@ tile_map_data = PackedByteArray("AAANAAcAAQAHAAQAAAANAAYAAQAHAAQAAAANAAUAAQAHAAQ
 tile_set = ExtResource("2_l8qe7")
 
 [node name="Props" type="TileMapLayer" parent="MidgroundParallax/Tilemap" unique_id=1347641768]
-position = Vector2(655, 116)
+position = Vector2(2255, 116)
 scale = Vector2(0.75, 0.75)
 tile_map_data = PackedByteArray("AAACAAIAAQAJAAIAAAD8/wgAAQAIAAIAAAD9/wgAAQAIAAEAAAD+/wgAAQAIAAEAAAD//wgAAQAIAAEAAAAAAAgAAQAIAAEAAAACAAgAAQAJAAAAAAACAAcAAQAIAAYAAAD8/wYAAQAJAAYAAAD9/wYAAQAJAAYAAAD+/wYAAQAJAAYAAAD//wYAAQAJAAYAAAAAAAYAAQAJAAYAAAD1/wcAAQAIAAcAAAD1/wgAAQAIAAgAAAD1/wYAAQACAAIAAAD0/wYAAQAEAAgAAAD2/wYAAQAEAAgAAAD0/wQAAQAEAAgAAAD1/wQAAQAEAAgAAAD2/wQAAQAEAAgAAAD1/wUAAQACAAAAAAACAAQAAQABAAMAAAACAAUAAQABAAUAAAATAAEAAQAAAAEAAAAGAAgAAQAEAAYAAAAQAAgAAQAEAAYAAAD3/wgAAQAEAAYAAADw/wMAAQABAAYAAADw/wQAAQABAAcAAADw/wUAAQABAAgAAADp////AQAJAAMAAAD9/wMAAQAJAAUAAAD2/wEAAQAJAAQAAADp/wgAAQAIAAIAAADq/wgAAQAIAAMAAADq/wUAAQABAAkAAADq/wQAAQAAAAgAAADr/wgAAQAIAAkAAADr/wcAAQAIAAUAAADw/wgAAQAJAAAAAADw/wcAAQAIAAYAAAA=")
 tile_set = ExtResource("2_l8qe7")
@@ -75,6 +74,8 @@ tile_map_data = PackedByteArray("AAAAAAQAAAACAAAAAAAAAAUAAAACAAEAAAAAAAYAAAACAAI
 tile_set = SubResource("TileSet_5k4jt")
 
 [node name="FloorLimit" type="StaticBody2D" parent="." unique_id=786986492]
+collision_layer = 8
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FloorLimit" unique_id=939511115]
 position = Vector2(535, 590)
@@ -93,11 +94,8 @@ fly_speed = 2500.0
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1684598683]
 position = Vector2(583, 345)
 
-[node name="CoinPickup" parent="." unique_id=22005584 instance=ExtResource("5_ifaiv")]
-position = Vector2(950, 350)
+[node name="PoolManager" parent="." unique_id=1745003184 instance=ExtResource("8_6et1j")]
 
-[node name="ObstacleBee" parent="." unique_id=423760792 instance=ExtResource("6_qy63d")]
-position = Vector2(1086, 236)
-
-[node name="ObstacleSlime" parent="." unique_id=1250169002 instance=ExtResource("7_6et1j")]
-position = Vector2(950, 200)
+[node name="LevelMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2090569324]
+stream = ExtResource("6_5k4jt")
+autoplay = true

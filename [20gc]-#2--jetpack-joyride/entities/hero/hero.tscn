@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dt2v7ml03ro7c" path="res://entities/hero/hero.gd" id="1_chcl2"]
 [ext_resource type="Texture2D" uid="uid://uxujkfmh1s1c" path="res://assets/NewPlatformerPack.png" id="2_chcl2"]
+[ext_resource type="AudioStream" uid="uid://cuocoyr4jkldl" path="res://assets/audio/sfx/JetpackSFX.ogg" id="3_s8sb5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epm60"]
 atlas = ExtResource("2_chcl2")
@@ -88,6 +89,7 @@ radius = 33.0
 height = 66.0
 
 [node name="Hero" type="CharacterBody2D" unique_id=1070624786]
+collision_mask = 13
 script = ExtResource("1_chcl2")
 
 [node name="JetpackSprite" type="AnimatedSprite2D" parent="." unique_id=1163789283]
@@ -106,3 +108,8 @@ animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2147094260]
 shape = SubResource("CapsuleShape2D_s8sb5")
+
+[node name="JetpackSFXPlayer" type="AudioStreamPlayer" parent="." unique_id=992116055]
+stream = ExtResource("3_s8sb5")
+volume_db = -10.0
+bus = &"SFX"

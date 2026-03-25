@@ -1,5 +1,6 @@
 extends Node2D
 
+#region Parallax properties
 @onready var background_parallax: Parallax2D = $BackgroundParallax
 @onready var midground_parallax: Parallax2D = $MidgroundParallax
 @onready var foreground_parallax: Parallax2D = $ForegroundParallax
@@ -13,16 +14,13 @@ const SCROLL_LIMIT : float = 1600.0
 var bg_start_scroll_pos_x : float
 var mg_start_scroll_pos_x : float
 var fg_start_scroll_pos_x : float
+#endregion
+
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.signal_game_over.connect(func():
-		Engine.time_scale = 0.1
-		await get_tree().create_timer(1.5, true, false, true).timeout
-		Engine.time_scale = 0.0
-		SignalBus.signal_new_score.emit()
-		UiManager.leaderboard.show()
-		)
 	
 	bg_start_scroll_pos_x = background_parallax.scroll_offset.x
 	mg_start_scroll_pos_x = midground_parallax.scroll_offset.x
